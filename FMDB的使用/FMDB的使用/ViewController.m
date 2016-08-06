@@ -51,11 +51,32 @@
     {
         NSLog(@"%@ %@",[rs stringForColumn:@"Name"],[rs stringForColumn:@"Age"]);
     }
+    //批量创建数据
+    BOOL oldshouldcachestatements = db.shouldCacheStatements;
+    [db setShouldCacheStatements:YES];//开启缓存
+    [db beginTransaction];//开启事务
+    //在nsstring %@ 起作用,可以替换表名
+    NSString *insertQuery = [[NSString alloc] initWithFormat:@"INSERT INTO User values( null,?, ? );"];
+    BOOL success = false;//定义属性接受是否写入成功
+   
+        for (int record = 0; record < 100; record++) {
+             @autoreleasepool {
+            //在sqlite中?起作用,替换字段值
+            success = [db executeUpdate:insertQuery,[NSString stringWithFormat:@"小老婆%d",record],[NSNumber numberWithInt:18]];
+        }
+//        NSLog(@"%d",success);
+        [db commit];//提交事务
+        [db setShouldCacheStatements:oldshouldcachestatements];//不开启缓存
+            [db close];//关闭数据库
+//        NSLog(@"%@",[db lastError]);
+//        NSLog(@"%@",[db lastErrorMessage]);
+    }
+
+
+
+    
+    
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

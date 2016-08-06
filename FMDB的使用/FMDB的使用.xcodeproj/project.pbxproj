@@ -353,6 +353,7 @@
 				18DCF4741D55EE7B006A2A14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
