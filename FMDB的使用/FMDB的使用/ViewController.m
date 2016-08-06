@@ -9,14 +9,13 @@
 #import "ViewController.h"
 #import "FMDB.h"
 #import <sqlite3.h>
+#import <sqlite3_private.h>
+#import <sqlite3ext.h>
 #define FMDBQuickCheck(SomeBool) { if (!(SomeBool)) { NSLog(@"Failure on line %d", __LINE__); abort(); } }
 @interface ViewController ()
 @property(nonatomic,strong)FMDatabase*dataBase;
-
 @end
-
 @implementation ViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //FMDB 是使用  增删改查
@@ -34,7 +33,7 @@
         return ;
     }
     //创建表和类型
-    [db executeUpdate:@"CREATE TABLE  IF NOT EXISTS User (Name text, Age integer)"];
+    [db executeUpdate:@"CREATE TABLE  IF NOT EXISTS User (id integer PRIMARY KEY autoincrement , Name text, Age integer)"];
 //    NSLog(@"%@",[db lastError]);
 //   NSLog(@"%@",[db lastErrorMessage]);
     //增加数据

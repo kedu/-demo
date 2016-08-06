@@ -20,6 +20,7 @@
 		18DCF4B01D55EF3C006A2A14 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCF4AA1D55EF3C006A2A14 /* FMResultSet.m */; };
 		18DCF4B11D55EF3C006A2A14 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DCF4AB1D55EF3C006A2A14 /* Info.plist */; };
 		18DCF4B31D55EFA6006A2A14 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DCF4B21D55EFA6006A2A14 /* libsqlite3.tbd */; };
+		18DCF4B51D5628A1006A2A14 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DCF4B41D5628A1006A2A14 /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		18DCF4AA1D55EF3C006A2A14 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		18DCF4AB1D55EF3C006A2A14 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18DCF4B21D55EFA6006A2A14 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		18DCF4B41D5628A1006A2A14 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DCF4B51D5628A1006A2A14 /* libsqlite3.0.tbd in Frameworks */,
 				18DCF4B31D55EFA6006A2A14 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +99,7 @@
 		18DCF45E1D55EE7B006A2A14 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18DCF4B41D5628A1006A2A14 /* libsqlite3.0.tbd */,
 				18DCF4B21D55EFA6006A2A14 /* libsqlite3.tbd */,
 				18DCF45F1D55EE7B006A2A14 /* main.m */,
 			);
