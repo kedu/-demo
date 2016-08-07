@@ -71,11 +71,6 @@
 //        NSLog(@"%@",[db lastError]);
 //        NSLog(@"%@",[db lastErrorMessage]);
     }
-
-
-
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
