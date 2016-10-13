@@ -16,7 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIUserNotificationSettings*set =[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
+    UIMutableUserNotificationAction*action=[[UIMutableUserNotificationAction alloc]init];
+    action.title=@"动作标题";
+    action.activationMode=UIUserNotificationActivationModeBackground;
+    action.destructive=YES;//消极的
+    action.authenticationRequired=YES;//需要证明
+    //UIUserNotificationCategory
+    UIMutableUserNotificationCategory*categoy=[[UIMutableUserNotificationCategory alloc]init];
+    NSArray*array=[NSArray arrayWithObject:action];
+    [categoy setActions:array forContext:UIUserNotificationActionContextDefault];
+    
+    
+    NSSet*set1 =[NSSet setWithObjects:categoy, nil];
+    UIUserNotificationSettings*set =[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:set1];
     [[UIApplication sharedApplication]registerUserNotificationSettings:set];
     //创建本地通知 特定的时间或事件显示出来
     UILocalNotification*local = [[UILocalNotification alloc]init];
